@@ -266,7 +266,13 @@ export default function AuthModal({ isOpen, onClose, defaultMode = 'signin' }: A
       }
     } catch (err: any) {
       console.error(err);
-      setError(err.message || "Failed Google Authentication Sign In");
+      if (err.code === 'auth/popup-blocked') {
+        setError("Sign-in popup is blocked by your browser. Please allow popups for this site, or open the app in a new tab.");
+      } else if (err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request') {
+        setError("The sign-in popup was closed before authentication completed.");
+      } else {
+        setError(err.message || "Failed Google Authentication Sign In");
+      }
     } finally {
       setLoading(false);
     }

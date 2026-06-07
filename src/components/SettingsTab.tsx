@@ -609,10 +609,12 @@ export default function SettingsTab({
       console.error(e);
       if (e.code === 'auth/wrong-password' || e.code === 'auth/invalid-credential') {
          toast.error("Incorrect password.", { id: toastId });
-      } else if (e.code === 'auth/popup-closed-by-user') {
+      } else if (e.code === 'auth/popup-closed-by-user' || e.code === 'auth/cancelled-popup-request') {
          toast.error("Google sign-in popup closed. Deletion cancelled.", { id: toastId });
       } else if (e.code === 'auth/requires-recent-login') {
          toast.error("Please log in again to delete your account.", { id: toastId });
+      } else if (e.code === 'auth/popup-blocked') {
+         toast.error("Popup blocked by browser. Please allow popups or open this app in a new tab.", { id: toastId });
       } else {
          toast.error("Error during account deletion.", { id: toastId });
       }
