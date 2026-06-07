@@ -1,0 +1,15 @@
+{
+  "short_name": "Cenivo",
+  "name": "Cenivo - Discover Movies & Series",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B0B0B",
+  "theme_color": "#0B0B0B",
+  "display": "standalone"
+}

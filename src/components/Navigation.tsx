@@ -67,110 +67,113 @@ export default function Navigation({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-12">
-          {/* Brand Wordmark & Emblem */}
-          <div
-            onClick={() => handleTabClick('home')}
-            className="cursor-pointer"
-          >
-            <CenivoLogo size="md" glow={false} />
-          </div>
+          {/* Unified Branding and Primary Navigation Group */}
+          <div className="flex items-center gap-10 md:gap-11 lg:gap-12">
+            {/* Brand Wordmark & Emblem */}
+            <div
+              onClick={() => handleTabClick('home')}
+              className="cursor-pointer shrink-0 transition-opacity duration-200 hover:opacity-90 flex items-center"
+            >
+              <CenivoLogo size="md" glow={false} />
+            </div>
 
-          {/* Large Screen Core Links */}
-          <div className="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider">
-            {user ? (
-              <>
-                <button
-                  onClick={() => handleTabClick('home')}
-                  className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
-                    activeTab === 'home' ? 'text-white' : 'text-zinc-400 hover:text-white'
-                  }`}
-                >
-                  Discover
-                  {activeTab === 'home' && (
-                    <motion.div
-                      layoutId="activeNavTabLine"
-                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
-                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    />
-                  )}
-                </button>
-                <button
-                  onClick={() => handleTabClick('recommendation')}
-                  className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
-                    activeTab === 'recommendation' ? 'text-white' : 'text-zinc-400 hover:text-white'
-                  }`}
-                >
-                  Recommendation
-                  {activeTab === 'recommendation' && (
-                    <motion.div
-                      layoutId="activeNavTabLine"
-                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
-                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    />
-                  )}
-                </button>
-                <button
-                  onClick={() => handleTabClick('watchlist')}
-                  className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
-                    activeTab === 'watchlist' ? 'text-white' : 'text-zinc-400 hover:text-white'
-                  }`}
-                >
-                  Watchlist
-                  {activeTab === 'watchlist' && (
-                    <motion.div
-                      layoutId="activeNavTabLine"
-                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
-                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    />
-                  )}
-                </button>
-                <button
-                  onClick={() => handleTabClick('ratings')}
-                  className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
-                    activeTab === 'ratings' ? 'text-white' : 'text-zinc-400 hover:text-white'
-                  }`}
-                >
-                  My Ratings
-                  {activeTab === 'ratings' && (
-                    <motion.div
-                      layoutId="activeNavTabLine"
-                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
-                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    />
-                  )}
-                </button>
-                <button
-                  onClick={() => handleTabClick('settings')}
-                  className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
-                    activeTab === 'settings' ? 'text-white' : 'text-zinc-400 hover:text-white'
-                  }`}
-                >
-                  Settings
-                  {activeTab === 'settings' && (
-                    <motion.div
-                      layoutId="activeNavTabLine"
-                      className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
-                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                    />
-                  )}
-                </button>
-              </>
-            ) : (
-              <>
-                <button
-                  onClick={() => scrollToSection('trending')}
-                  className="text-zinc-400 hover:text-white font-bold transition-all duration-200 cursor-pointer text-[11px] tracking-widest uppercase hover:scale-105"
-                >
-                  Trending Library
-                </button>
-                <button
-                  onClick={() => scrollToSection('importer')}
-                  className="text-zinc-400 hover:text-white font-bold transition-all duration-200 cursor-pointer text-[11px] tracking-widest uppercase hover:scale-105"
-                >
-                  File Importer
-                </button>
-              </>
-            )}
+            {/* Large Screen Core Links */}
+            <div className="hidden md:flex items-center gap-6 lg:gap-8 text-xs font-bold uppercase tracking-wider">
+              {user ? (
+                <>
+                  <button
+                    onClick={() => handleTabClick('home')}
+                    className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
+                      activeTab === 'home' ? 'text-white' : 'text-zinc-400 hover:text-white'
+                    }`}
+                  >
+                    Discover
+                    {activeTab === 'home' && (
+                      <motion.div
+                        layoutId="activeNavTabLine"
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
+                        transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                      />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => handleTabClick('recommendation')}
+                    className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
+                      activeTab === 'recommendation' ? 'text-white' : 'text-zinc-400 hover:text-white'
+                    }`}
+                  >
+                    Recommendation
+                    {activeTab === 'recommendation' && (
+                      <motion.div
+                        layoutId="activeNavTabLine"
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
+                        transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                      />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => handleTabClick('watchlist')}
+                    className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
+                      activeTab === 'watchlist' ? 'text-white' : 'text-zinc-400 hover:text-white'
+                    }`}
+                  >
+                    Watchlist
+                    {activeTab === 'watchlist' && (
+                      <motion.div
+                        layoutId="activeNavTabLine"
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
+                        transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                      />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => handleTabClick('ratings')}
+                    className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
+                      activeTab === 'ratings' ? 'text-white' : 'text-zinc-400 hover:text-white'
+                    }`}
+                  >
+                    My Ratings
+                    {activeTab === 'ratings' && (
+                      <motion.div
+                        layoutId="activeNavTabLine"
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
+                        transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                      />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => handleTabClick('settings')}
+                    className={`relative font-bold transition-all duration-300 cursor-pointer text-[12px] tracking-widest pb-1.5 ${
+                      activeTab === 'settings' ? 'text-white' : 'text-zinc-400 hover:text-white'
+                    }`}
+                  >
+                    Settings
+                    {activeTab === 'settings' && (
+                      <motion.div
+                        layoutId="activeNavTabLine"
+                        className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#ff9d00] via-[#ff4d6d] to-[#6c63ff] shadow-[0_0_12px_rgba(255,140,0,0.8)] rounded-full"
+                        transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                      />
+                    )}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => scrollToSection('trending')}
+                    className="text-zinc-400 hover:text-white font-bold transition-all duration-200 cursor-pointer text-[11px] tracking-widest uppercase hover:scale-105"
+                  >
+                    Trending Library
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('importer')}
+                    className="text-zinc-400 hover:text-white font-bold transition-all duration-200 cursor-pointer text-[11px] tracking-widest uppercase hover:scale-105"
+                  >
+                    File Importer
+                  </button>
+                </>
+              )}
+            </div>
           </div>
 
           {/* Action Tools Header Controls */}
