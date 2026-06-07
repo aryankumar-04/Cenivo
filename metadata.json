@@ -1,0 +1,6 @@
+{
+  "name": "Cenivo",
+  "description": "AI-powered discovery and recommendation platform for movies, series, and anime.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

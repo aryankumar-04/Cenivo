@@ -1,0 +1,87 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile metadata stored per registered UID.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The unique user authentication ID." },
+        "displayName": { "type": "string", "description": "The user's screen name." },
+        "username": { "type": "string", "description": "The user's unique custom handle." },
+        "usernameLower": { "type": "string", "description": "Lowercase representation of the username handle for uniqueness query matching." },
+        "email": { "type": "string", "description": "The user's registered email address." },
+        "avatarUrl": { "type": "string", "description": "Profile picture URL." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Profile creation timestamp." }
+      },
+      "required": ["uid", "displayName", "email"]
+    },
+    "PersonalizationProfile": {
+      "title": "PersonalizationProfile",
+      "description": "User preferences, taste vectors, interaction logs, and metadata for recommendations.",
+      "type": "object",
+      "properties": {
+        "favoriteGenres": { "type": "string", "description": "Comma-separated list of genres." },
+        "personalizationScores": { "type": "object", "description": "Weighted interaction affinity vectors." },
+        "recentInteractions": { "type": "array", "description": "Chronological rolling logs of last 20 user actions." },
+        "preferences": { "type": "object", "description": "Custom model weighting priorities or preferences." },
+        "savedSearches": { "type": "array", "description": "User's saved custom research parameters." },
+        "recentSearches": { "type": "array", "description": "User's quick search history queries." }
+      }
+    },
+    "WatchlistItem": {
+      "title": "WatchlistItem",
+      "description": "An entry keeping track of a user's watchlist state.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique auto-generated record ID." },
+        "userId": { "type": "string", "description": "The UID of the owning user." },
+        "titleId": { "type": "string", "description": "The unique reference ID for the movie/series/anime." },
+        "title": { "type": "string", "description": "Name of the movie, show, or anime." },
+        "type": { "type": "string", "enum": ["movie", "series", "anime"], "description": "Classification of content." },
+        "posterUrl": { "type": "string", "description": "Image link to the title poster." },
+        "year": { "type": "string", "description": "Year of release." },
+        "rating": { "type": "number", "description": "Visual rating out of 100." },
+        "state": { "type": "string", "enum": ["watchlist", "watching", "completed", "favorites"], "description": "User's progress tracker." },
+        "addedAt": { "type": "string", "format": "date-time", "description": "Timestamp when added." }
+      },
+      "required": ["userId", "titleId", "title", "type", "state"]
+    },
+    "RatingItem": {
+      "title": "RatingItem",
+      "description": "User rating reviews.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique review identifier." },
+        "userId": { "type": "string", "description": "The UID of the reviewer." },
+        "username": { "type": "string", "description": "The displayName of the reviewer." },
+        "titleId": { "type": "string", "description": "Target cinematic work identifier." },
+        "title": { "type": "string", "description": "Cinematic work title." },
+        "rating": { "type": "number", "description": "Rating score from 1 to 100." },
+        "reviewText": { "type": "string", "description": "User's critique message." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Time of review submission." }
+      },
+      "required": ["userId", "username", "titleId", "title", "rating"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores core registered user credentials and references."
+    },
+    "users/{userId}/settings/{docId}": {
+      "description": "Saves user profile, privacy boundaries, playback settings, and notification preferences."
+    },
+    "users/{userId}/watchlist/{itemId}": {
+      "schema": "WatchlistItem",
+      "description": "Custom watch status records isolated under the user's document."
+    },
+    "users/{userId}/ratings/{ratingId}": {
+      "schema": "RatingItem",
+      "description": "Critiques, ratings, and reviews given by a specific user."
+    },
+    "users/{userId}/personalization/{docId}": {
+      "schema": "PersonalizationProfile",
+      "description": "Stores personalization logs, recommendation vectors and advanced research parameters."
+    }
+  }
+}
