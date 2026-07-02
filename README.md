@@ -122,14 +122,39 @@ npm run dev
 
 # 📸 Screenshots
 
-Add screenshots of
+### 🏠 Home Page
 
-- Home Page
-- Discover
-- Search
-- Watchlist
-- Movie Details
-- Profile
+![Home Page](screenshots/home.png)
+
+---
+
+### 🎬 Discover
+
+![Discover](screenshots/discover.png)
+
+---
+
+### 🔍 Search
+
+![Search](screenshots/search.png)
+
+---
+
+### ⭐ Ratings
+
+![Ratings](screenshots/ratings.png)
+
+---
+
+### ❤️ Watchlist
+
+![Watchlist](screenshots/watchlist.png)
+
+---
+
+### ⚙️ Settings
+
+![Settings](screenshots/settings.png)
 
 ---
 
