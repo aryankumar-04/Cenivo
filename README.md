@@ -77,12 +77,13 @@ The project was built to improve my skills in frontend development, Firebase int
 ```
 src/
 ├── components/
-├── pages/
-├── hooks/
-├── services/
-├── assets/
-├── utils/
-└── App.jsx
+├── lib/
+├── stores/
+├── App.tsx/
+├── data.ts/
+├── indesx.css/
+├── main.tsx/
+└── types.ts
 
 public/
 firebase/
