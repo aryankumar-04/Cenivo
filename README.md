@@ -39,16 +39,6 @@ The project was built to improve my skills in frontend development, Firebase int
 
 ---
 
-# 🖥️ Preview
-
-> Replace these with screenshots later.
-
-| Home | Hero |
-|------|------|
-| Home Screenshot | Hero Screenshot |
-
----
-
 # 🛠️ Tech Stack
 
 ## Frontend
