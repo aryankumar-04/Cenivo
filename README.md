@@ -3,19 +3,12 @@
 > A modern AI-powered movie & TV discovery platform built with React, Firebase, and modern web technologies.
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
-
 ![License](https://img.shields.io/badge/License-MIT-blue)
-
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
-
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
-
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
-
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
-
 ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
-
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ---
